@@ -55,7 +55,10 @@ function updateBackground() {
    SLIDER
 ---------------------------------------------------- */
 function updateSlider(){
-    container.querySelector('.item.active').classList.remove('active');
+    let slideSound = new Audio('assets/sounds/slide.mp3');
+slideSound.volume = 0.4;
+
+ container.querySelector('.item.active').classList.remove('active');
     items[index].classList.add('active');
 
     indicator.querySelector('ul li.active').classList.remove('active');
@@ -63,7 +66,13 @@ function updateSlider(){
 
     number.innerHTML = '0' + (index + 1);
 
-    updateBackground(); // MUDA O FUNDO AQUI
+    updateBackground();
+
+    // 🔊 SOM AO TROCAR SLIDE
+    slideSound.currentTime = 0;
+    slideSound.play();
+
+    parallaxEffect();
 }
 
 nextButton.onclick = () => {
@@ -78,3 +87,17 @@ prevButton.onclick = () => {
 
 /* Ativar background inicial */
 updateBackground();
+
+function parallaxEffect() {
+    let active = items[index];
+
+    let img = active.querySelector('.car-img img');
+    let title = active.querySelector('h2');
+    let desc = active.querySelector('.description');
+
+    if (img) img.style.transform = "translateX(-20px) rotate(-18deg) scale(1.05)";
+    if (title) title.style.transform = "translateX(0px)";
+    if (desc) desc.style.transform = "translateX(15px)";
+}
+
+let slideSound = new Audio('assets/sounds/slide.mp3');
