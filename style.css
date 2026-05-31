@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad+Guides&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+:root {
+    --accent-color: #ffffff;
+    /* alterado via JS */
+    --description-color: #ffffff;
+
+    --scroll-color: #ffffff;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+body {
+    background: black;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+header h2 {
+    font-family: "Orbitron", sans-serif;
+}
+
+header nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+header nav li {
+    font-size: 20px;
+    color: #fff;
+    transition: 0.3s;
+    font-family: "Playwrite US Trad Guides", cursive;
+}
+
+header nav li:hover {  
+    cursor: pointer;
+    font-size: 23px;
+}
+
+section {
+    height: 100vh;
+    position: relative;
+
+    & .list {
+        width: 70vh;
+        height: 100%;
+        margin: auto;
+        position: relative;
+
+        & .item {
+            color: var(--description-color);
+            transition: 0.4s ease;
+            position: absolute;
+            inset: 0;
+
+            & .car-img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -200px;
+                width: 130%;
+
+                & img {
+                    width: 100%;
+                    transform: rotate(-30deg);
+                }
+
+                &::before {
+                    height: 20vh;
+                    content: '';
+                    position: absolute;
+                    background-color: #000;
+                    width: 100%;
+                    top: 130%;
+                    left: 46px;
+                    border: 50%;
+                    filter: blur(70px);
+                }
+            }
+
+            & .content {
+                position: absolute;
+                right: 100px;
+                top: 75px;
+                left: 270px;
+                width: 70%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: end;
+                gap: 6px;
+
+                & .car-infomation {
+                    font-weight: bold;
+                }
+
+                & h2 {
+                    font-size: 3.4em;
+                    line-height: 1em;
+                }
+
+                & .description {
+                    color: var(--description-color);
+                    transition: 0.4s ease;
+                    font-size: 13px;
+                    text-align: right;
+                    max-width: 400px;
+                }
+
+                & .information {
+                    border-radius: 30px;
+                    margin-top: 10px;
+                    height: 38px;
+                    width: 120px;
+                    text-transform: uppercase;
+                    border: 1px solid var(--description-color);
+                    background-color: var(--description-color);
+                    color: #222222;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: 0.5s;
+                }
+
+            }
+
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 10px;
+            width: 800px;
+            left: -200px;
+            top: 51%;
+            border-top: 1px solid #fff;
+        }
+
+    }
+
+
+    .arrows {
+        width: 150vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -20px);
+        display: flex;
+        justify-content: space-between;
+        z-index: 5;
+
+
+
+        & button:nth-child(1) {
+            & img {
+                transform: scale(-1);
+            }
+        }
+
+        & button {
+            top: 60%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+
+            & img {
+                width: 30px;
+                margin-top: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .indicators {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translatex(-50%);
+        height: 200px;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 15px;
+
+        & .number {
+            font-size: 5em;
+            font-family: "Lobster", sans-serif;
+        }
+
+        & ul {
+            display: flex;
+            gap: 10px;
+
+            & li {
+                width: 50px;
+                height: 5px;
+                background-color: var(--scroll-color);
+                border-radius: 5px;
+                transition: 0.5s;
+            }
+
+            & .active {
+                background-color: #fff;
+                color: var(--description-color);
+                transition: 0.4s ease;
+            }
+        }
+    }
+}
+
+                
+
+& .information:hover {
+    background-color: var(--accent-color) !important;
+    color: #000 !important;
+    box-shadow: 25px 25px 40px -32px rgba(0, 0, 0, 1);
+    margin-top: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.arrows button:hover {
+    background-color: var(--accent-color) !important;
+    color: #000 !important;
+}
+
+header nav li:hover {
+    color: var(--accent-color) !important;
+}
+
+
+.item.active .description {
+    color: var(--description-color);
+    transition: 0.4s ease;
+}
+
+
+section {
+    & .list {
+        --calculation: 1;
+
+        & .item {
+            transform: translateX(100vw);
+            transition: 0.5s;
+            opacity: 0;
+
+            & .car-img {
+                & img {
+                    transform: rotate(0);
+                    transition: 0.5s;
+                    transition-delay: 0.3s;
+                }
+            }
+
+            & .content {
+
+                & .car-information,
+                h2,
+                .description,
+                .information {
+                    transform: translateX(200px);
+                    transition: 0.7s;
+                    transition-delay: 0.3s;
+                    opacity: 0;
+
+                }
+
+                & h2 {
+                    transition-delay: 0.5s;
+                }
+
+                & .description {
+                    transition-delay: 0.7s;
+                }
+
+                & .information {
+                    transition-delay: 0.9s;
+                }
+
+            }
+        }
+
+        & .active {
+            transform: translateX(0);
+            transition: 0.5s;
+            opacity: 1;
+
+            & .car-img {
+                & img {
+                    transform: rotate(-20deg);
+                }
+            }
+
+            & .content {
+
+                & .car-information,
+                h2,
+                .description,
+                .information {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+section {
+    transition: background 1s ease;
+}
+
+/* Porsche (cinzento) */
+.bg-porsche {
+    background: radial-gradient(circle, #dcdcdc, #8d8d8d, #3a3a3a);
+}
+
+/* Ferrari (vermelho) */
+.bg-ferrari {
+    background: radial-gradient(circle, #ff4d4d, #cc0000, #660000);
+}
+
+/* Lamborghini (amarelo) */
+.bg-lamborghini {
+    background: radial-gradient(circle, #ffe773, #ffcc00, #8c6f00);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    section .content h2 { font-size: 2.5em; }
+    section .content .description { font-size: 12px; max-width: 300px; }
+    .arrows { width: 70%; }
+}
+
+@media (max-width: 768px) {
+    header { padding: 10px 20px; }
+    header nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    section .car-img { left: -100px; width: 110%; }
+    section .content { left: 20px; right: 20px; top: 50%; transform: translateY(-50%); align-items: center; text-align: center; }
+    section .content h2 { font-size: 2em; }
+    section .content .description { max-width: 90%; text-align: center; }
+    .arrows { width: 80%; }
+    .indicators .number { font-size: 1.5em; }
+}
+
+@media (max-width: 480px) {
+    section .content h2 { font-size: 1.5em; }
+    section .content button { width: 100px; height: 35px; font-size: 12px; }
+    .arrows button { width: 40px; height: 40px; }
+    .indicators .number { font-size: 1.2em; }
+}
+
+/* =========================
+   TABLETS
+========================= */
+@media (max-width: 992px) {
+
+    header {
+        padding: 15px 25px;
+    }
+
+    header nav ul {
+        gap: 20px;
+    }
+
+    section .list {
+        width: 100%;
+    }
+
+    section .list .item .car-img {
+        left: -80px;
+        width: 100%;
+    }
+
+    section .list .item .content {
+        left: 180px;
+        right: 20px;
+        width: auto;
+    }
+
+    section .list .item .content h2 {
+        font-size: 2.5rem;
+    }
+
+    .arrows {
+        width: 90%;
+    }
+
+    .indicators .number {
+        font-size: 3rem;
+    }
+}
+
+/* =========================
+   TELEMÓVEIS
+========================= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    header nav ul {
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    header nav li {
+        font-size: 15px;
+    }
+
+    section .list {
+        width: 100%;
+    }
+
+    section .list::before {
+        display: none;
+    }
+
+    section .list .item .car-img {
+        position: absolute;
+        top: 22%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+    section .list .item .car-img img {
+        width: 100%;
+        max-width: 400px;
+        transform: rotate(-10deg);
+    }
+
+    section .list .item .content {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 55%;
+        width: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    section .list .item .content h2 {
+        font-size: 2rem;
+    }
+
+    section .list .item .content .description {
+        text-align: center;
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    section .list .item .content .information {
+        width: 140px;
+    }
+
+    .arrows {
+        width: 95%;
+        top: 85%;
+    }
+
+    .arrows button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .indicators {
+        bottom: 10px;
+        height: auto;
+    }
+
+    .indicators .number {
+        font-size: 2rem;
+    }
+
+    .indicators ul li {
+        width: 30px;
+    }
+}
+
+/* =========================
+   TELEMÓVEIS PEQUENOS
+========================= */
+@media (max-width: 480px) {
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    header nav li {
+        font-size: 13px;
+    }
+
+    section .list .item .car-img {
+        top: 20%;
+        width: 95%;
+    }
+
+    section .list .item .content {
+        top: 50%;
+    }
+
+    section .list .item .content h2 {
+        font-size: 1.6rem;
+    }
+
+    section .list .item .content .description {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    section .list .item .content .information {
+        width: 120px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .arrows {
+        top: 88%;
+    }
+
+    .arrows button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .indicators .number {
+        font-size: 1.5rem;
+    }
+}
